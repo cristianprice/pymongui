@@ -22,4 +22,4 @@ if __name__ == '__main__':
         for s in enum_schemas(conn):
             for t in enum_tables(conn, s):
                 for c in enum_columns(conn, t):
-                    print(c)
+                    logger().info(c)
