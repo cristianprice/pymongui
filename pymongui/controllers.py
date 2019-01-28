@@ -3,6 +3,9 @@ from os import cpu_count
 
 from pymongui.logging_wrapper import logger
 from pymongui.monet_db import create_db_connection
+from pymongui.monet_db import enum_schemas
+from pymongui.monet_db import enum_tables
+from pymongui.monet_db import enum_columns
 
 
 def task_execution_context(thread_count=cpu_count()):
@@ -14,5 +17,9 @@ def task_execution_context(thread_count=cpu_count()):
 
 if __name__ == '__main__':
     ctx = task_execution_context()
-    with create_db_connection() as conn:
-        print(conn)
+    with create_db_connection(database='events') as conn:
+
+        for s in enum_schemas(conn):
+            for t in enum_tables(conn, s):
+                for c in enum_columns(conn, t):
+                    print(c)
