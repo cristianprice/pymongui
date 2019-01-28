@@ -2,6 +2,7 @@ from multiprocessing import Pool
 from os import cpu_count
 
 from org.pymongui.logging_wrapper import logger
+from org.pymongui.monet_db import create_db_connection
 
 
 def task_execution_context(thread_count=cpu_count()):
@@ -13,3 +14,4 @@ def task_execution_context(thread_count=cpu_count()):
 
 if __name__ == '__main__':
     ctx = task_execution_context()
+    create_db_connection()
