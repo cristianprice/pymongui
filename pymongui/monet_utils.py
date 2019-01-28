@@ -1,5 +1,5 @@
 import pymonetdb
-from pymongui.logging_wrapper import logger
+from pymongui.logging_utils import logger
 from contextlib import contextmanager
 from collections import namedtuple
 

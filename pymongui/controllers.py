@@ -1,11 +1,11 @@
 from multiprocessing import Pool
 from os import cpu_count
 
-from pymongui.logging_wrapper import logger
-from pymongui.monet_db import create_db_connection
-from pymongui.monet_db import enum_schemas
-from pymongui.monet_db import enum_tables
-from pymongui.monet_db import enum_columns
+from pymongui.logging_utils import logger
+from pymongui.monet_utils import create_db_connection
+from pymongui.monet_utils import enum_schemas
+from pymongui.monet_utils import enum_tables
+from pymongui.monet_utils import enum_columns
 
 
 def task_execution_context(thread_count=cpu_count()):
